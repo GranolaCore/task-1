@@ -6,7 +6,7 @@ export class DateController {
     constructor(private dateService: DateService) {}
 
     @Get('/:date?')
-    getDateInfo(@Param('date') date: string) {
+    getDateInfo(@Param('date') date?: string) {
         return this.dateService.getDate(date);
     }
 }

@@ -14,10 +14,10 @@ export class DateService {
     getDate(date: string) {
         const now = date ? new Date(date) : new Date();
 
-        if (date === '1451001600000') {
+        if (!isNaN(Number(date))) {
             return {
-                utc: new Date(1451001600000).toUTCString(),
-                unix: 1451001600000,
+                utc: new Date(Number(date)).toUTCString(),
+                unix: Number(date),
             };
         }
 
